@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { fromEvent, from } from "rxjs";
-import { filter, take } from "rxjs/operators";
+import { fromEvent, from, interval } from "rxjs";
+import { filter, take, map, mergeMapTo } from "rxjs/operators";
 import { getRepos } from "./index.js";
 import style from "./index.module.css";
 
@@ -25,17 +25,17 @@ class GithubInput extends Component {
     // 订阅器
     takeSource.subscribe((x) => console.log("take log", x.target.value));
 
-    //
+    //input
     const keyUpSource = fromEvent(
       document.getElementById("search-btn"),
       "keyup"
-    )
-      .map((e) => e.target.value)
-      .filter((text) => !!text)
-      .do((value) => console.log(value))
-      // 调用 getRepos 方法将返回一个 Observable
-      // flatMap 则将所有 Observable 合并，转为一个 Observable
-      .flatMap(getRepos);
+    );
+
+    keyUpSource
+      .pipe(map((e) => e.target.value))
+      .pipe(filter((text) => !!text))
+      .pipe(mergeMapTo(interval(1000)));
+    // 调用 getRepos 方法将返回一个 Observable
 
     keyUpSource.subscribe((x) => console.log(x));
   }
