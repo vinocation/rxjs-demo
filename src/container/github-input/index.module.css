@@ -1,0 +1,29 @@
+.mainContainer {
+  max-width: 1000px;
+  width: 80%;
+  min-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding: 80px 0;
+}
+.header {
+}
+
+.search {
+  border: none;
+  outline: none;
+  padding: 7.5px 15px;
+  color: #4a4a4a;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 2px;
+  margin: 15px;
+  transition: all 0.4s;
+  min-width: 200px;
+  height: 40px;
+  line-height: 40px;
+  width: 90%;
+  max-width: 550px;
+  box-shadow: 5px 5px 60px 0 rgb(0 0 0 / 20%);
+}
