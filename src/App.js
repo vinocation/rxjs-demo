@@ -1,14 +1,9 @@
-import "./App.css";
-import GitHubInput from "./components/github-input/index.jsx";
-import Counter from "./components/rxjs-count";
+import React from "react";
+import GitHubInput from "./container/github-input/index.jsx";
+// import Counter from "./container/rxjs-count/index.jsx";
 
 function App() {
-  return (
-    <div className="App">
-      <GitHubInput />
-      <Counter />
-    </div>
-  );
+  return <GitHubInput />;
 }
 
 export default App;

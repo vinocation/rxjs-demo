@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { of, from } from "rxjs";
+import { from } from "rxjs";
 
 class Counter extends Component {
   constructor() {
