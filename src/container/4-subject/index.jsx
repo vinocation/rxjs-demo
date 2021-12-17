@@ -1,22 +1,19 @@
 import { React, Component } from "react";
-import { fromEvent } from "rxjs";
 import { Subject } from "rxjs";
 
 class SubjectDemo extends Component {
   componentDidMount() {
-    //   const source1 = fromEvent(document.getElementById('textInput'), 'input')
-    //   const source2 = fromEvent(document.getElementById('numInput'), 'input')
-
     const subject = new Subject();
 
-    // subscriber 1
-    subject.subscribe(() => {
-      console.log("subjectID: a");
+    subject.subscribe({
+      next: (v) => console.log(`observerA: ${v}`),
     });
-    // subscriber 2
-    subject.subscribe((data) => {
-      console.log("subjectID: b");
+    subject.subscribe({
+      next: (v) => console.log(`observerB: ${v}`),
     });
+
+    subject.next(1);
+    subject.next(2);
   }
 
   componentWillUnmount() {
@@ -24,12 +21,7 @@ class SubjectDemo extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <input type="text" id="textInput" />
-        <input type="number" id="numInput" />
-      </div>
-    );
+    return <div>单播和多播</div>;
   }
 }
 
