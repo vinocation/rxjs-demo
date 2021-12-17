@@ -5,7 +5,7 @@ import ClickDemo from "./container/1-click-demo/index.jsx";
 import ObservableDemo from "./container/2-observable/index.jsx";
 import ObserverDemo from "./container/3-observer/index.jsx";
 import SubjectDemo from "./container/4-subject";
-import GitHubInput from "./container/5-github-input/index.jsx";
+import GitHubInput from "./container/5-github-input/index.js";
 
 const { TabPane } = Tabs;
 

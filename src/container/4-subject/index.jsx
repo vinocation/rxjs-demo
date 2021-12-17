@@ -10,12 +10,12 @@ class SubjectDemo extends Component {
     const subject = new Subject();
 
     // subscriber 1
-    subject.subscribe((data) => {
-      console.log("subjectID:" + data);
+    subject.subscribe(() => {
+      console.log("subjectID: a");
     });
     // subscriber 2
     subject.subscribe((data) => {
-      console.log("subjectID:" + data);
+      console.log("subjectID: b");
     });
   }
 
