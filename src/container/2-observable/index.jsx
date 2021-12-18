@@ -17,8 +17,6 @@ class ObservableDemo extends Component {
         console.log(value);
       });
 
-    // 创建observable
-    const range = from([1, 2, 3, 4, 5]);
     // 创建发出点击事件的 observable
     const source = fromEvent(document.getElementById("search-btn"), "input");
 
